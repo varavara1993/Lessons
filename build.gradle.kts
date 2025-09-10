@@ -1,0 +1,41 @@
+plugins {
+    id("java")
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+        // Явно указываем вендора для автозагрузки JDK
+        vendor.set(JvmVendorSpec.ADOPTIUM)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Selenide
+    testImplementation("com.codeborne:selenide:7.2.3")
+
+    // JUnit 5
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+
+    // Logback для логирования
+    testImplementation("ch.qos.logback:logback-classic:1.5.6")
+}
+
+tasks.test {
+    useJUnitPlatform()
+
+    systemProperties = mapOf(
+        "selenide.headless" to "false",
+        "selenide.browser" to "chrome",
+        "selenide.timeout" to "10000",
+        "selenide.driverManagerEnabled" to "true"
+    )
+}
