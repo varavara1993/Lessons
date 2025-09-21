@@ -21,9 +21,13 @@ dependencies {
     // Selenide
     testImplementation("com.codeborne:selenide:7.2.3")
 
+
     // JUnit 5
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+
+
+    testImplementation("org.slf4j:slf4j-simple:2.0.6")
 
     // Logback для логирования
     //testImplementation("ch.qos.logback:logback-classic:1.5.6")
