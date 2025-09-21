@@ -32,10 +32,6 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 
-    systemProperties = mapOf(
-        "selenide.headless" to "false",
-        "selenide.browser" to "chrome",
-        "selenide.timeout" to "10000",
-        "selenide.driverManagerEnabled" to "true"
-    )
+
+
 }
