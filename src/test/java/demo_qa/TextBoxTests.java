@@ -1,13 +1,13 @@
-package demoQA;
+package demo_qa;
 
 import com.codeborne.selenide.Configuration;
-import demoQA.pages.PageObject;
+import demo_qa.pages.PageObject;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TxtBoxTests {
+public class TextBoxTests {
     PageObject PageObject =  new PageObject();
 
     @BeforeAll
