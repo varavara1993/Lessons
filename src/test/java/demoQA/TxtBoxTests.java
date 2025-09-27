@@ -1,17 +1,30 @@
 package demoQA;
 
+import com.codeborne.selenide.Configuration;
+import demoQA.pages.PageObject;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TxtBoxTests {
+    PageObject PageObject =  new PageObject();
+
+    @BeforeAll
+    static void beforeALL() {
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "1920x1080";
+    }
+
     @Test
     void formTest() {
-        open("https://demoqa.com/text-box");
-        $("#userName").setValue("Aleksandr");
-        $("#userEmail").setValue("aleks@mail.ru");
-        $("#currentAddress").setValue("Ekaterinburg, Pavlodarskaya street");
-        $("#permanentAddress").setValue("Ekaterinburg, Pavlodarskaya street");
+        PageObject.openPage();
+
+        PageObject.setUserName("Aleksandr");
+        PageObject.setUserEmail("aleks@mail.ru");
+        PageObject.setCurrentAddress("Ekaterinburg, Pavlodarskaya street");
+        PageObject.setPermanentAddress("Ekaterinburg, Pavlodarskaya street");
+
         $("#submit").scrollTo().click();
         $("#output").shouldHave(
                 text("Aleksandr"),
