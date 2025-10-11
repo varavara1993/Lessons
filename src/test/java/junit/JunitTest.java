@@ -3,13 +3,17 @@ package junit;
 import org.junit.jupiter.api.*;
 
 public class JunitTest {
+
     @BeforeAll
     static void beforeAll() {
         System.out.println(" Это метод beforeAll");
+
     }
+
     @AfterAll
     static void afterAll() {
         System.out.println(" Это метод @AfterAll");
+
     }
 
     @BeforeEach
@@ -20,6 +24,7 @@ public class JunitTest {
     @AfterEach
     void afterEach(){
         System.out.println("    Это метод @AfterEach");
+
     }
 
 

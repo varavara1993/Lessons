@@ -1,4 +1,4 @@
-package demo_qa.pages;
+package selenide.demo_qa.pages;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -8,8 +8,9 @@ public class PageObject {
     private final String userEmail = "#userEmail";
     private final String currentAddress = "#currentAddress";
     private final String permanentAddress = "#permanentAddress";
-    private final String submitButton = "#submit";
-    private final String output = "#output";
+    //private final String submitButton = "#submit";
+    //private final String output = "#output";
+
 
     public void openPage() {
         open("/text-box");
